@@ -1,85 +1,88 @@
-wynik1 = 0
+# sumę wszystkich liczb parzystych od 2 do 100 (włącznie).
+zad1=0
 for x in range(2,101):
     if(x%2==0):
-        wynik1 +=x
+        zad1 +=x
+print(zad1)
 
-print(wynik1)
-
-wynik2 = 0
+# sumę kwadratów wszystkich liczb od 1 do 100 (włącznie).
+zad2=0
 for x in range(1,101):
-    wynik2 += x*x
+    zad2+=x*x
+print(zad2)
 
-print(wynik2)
-
-wynik3 = 0
+# sumę potęg liczby 2 dla wykładników od 1 do 63 (włącznie).
+zad3=0
 for x in range(1,64):
-    wynik3 += 2**x
+    zad3+=2**x
+print(zad3)
 
-print(wynik3)
-
-a = int(input())
-b = int(input())
-zad4 = 0
+#s= sumę wszystkich liczb nieparzystych pomiędzy a i b (włącznie),
+# gdzie a i b są zmiennymi, do których uprzednio należy wczytać dwie liczby całkowite.
+# Dla a>b suma powinna wynosić zero.
+zad4=0
+a=int(input())
+b=int(input())
 for x in range(a,b+1):
-    if(x%2 != 0):
-        zad4 +=x
-
+    if(x%2 !=0):
+        zad4+=x
 print(zad4)
 
-n = int(input("Podaj liczbe naturalna n: "))
-liczby = []
+# zad.2
+# generuje ilość naturalnych dla n, np.: dla n=3 mamy wypisać ciąg naturalnych dla 3 to będzie miał założmy 1,2,3.
+n=int(input("Podaj liczbę naturalną n: "))
+liczby=[]
 for x in range(n):
-    liczba = float(input())
+    liczba=float(input())
     liczby.append(liczba)
+
 #a)
-zad5 = 0
+zad5=0
 for x in liczby:
-    zad5 +=x
-print('punkt a',zad5)
+    zad5+=x
+print(zad5)
 
 #b)
-zad6 = 1
+zad6=0
 for x in liczby:
-    zad6 *=x
-print('punkt b',zad6)
+    zad6*=x
+print(zad6)
 
 #c)
-zad7 = 0
+zad7=0
 for x in liczby:
-    zad7 += abs(x)
-print('punkt c2',zad7)
+    zad7+=abs(x) # abs() to modula inaczej wartość bewzględna, i też jako pierwiastek
+print(zad7)
 
 #d)
-zad8 = 0
+zad8=0
 for x in liczby:
-    zad8 += abs(x)**(1/2)
-print('punkt d',zad8)
+    zad8+=abs(x)**(1/2)
+print(zad8)
 
 #e)
-zad9 = 1
+zad9=0
 for x in liczby:
     zad9*=abs(x)
-print('punkt e',zad9)
+print(zad9)
 
 #f)
 zad10=0
 for x in liczby:
     zad10+=x**2
-print('punkt f',zad10)
+print(zad10)
 
 #g)
 zad11=0
 for x in liczby:
     zad11+=x
     zad11*=x
-print('punkt g',zad11)
+print(zad11)
 
-#)h
-zad12=0
-for x in liczby:
-    zad12-=x+(-1)**(n+1)*x
-    #zad12+=(-1)**(n+1)*x
-print('punkt h',zad12)
+#h)
+zad12=sum((-1) ** x * liczby[x] for x in range(n))
+print(zad12)
+
 #i)
 
 
