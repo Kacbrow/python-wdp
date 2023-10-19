@@ -1,0 +1,115 @@
+wynik1 = 0
+for x in range(2,101):
+    if(x%2==0):
+        wynik1 +=x
+
+print(wynik1)
+
+wynik2 = 0
+for x in range(1,101):
+    wynik2 += x*x
+
+print(wynik2)
+
+wynik3 = 0
+for x in range(1,64):
+    wynik3 += 2**x
+
+print(wynik3)
+
+a = int(input())
+b = int(input())
+zad4 = 0
+for x in range(a,b+1):
+    if(x%2 != 0):
+        zad4 +=x
+
+print(zad4)
+
+n = int(input("Podaj liczbe naturalna n: "))
+liczby = []
+for x in range(n):
+    liczba = float(input())
+    liczby.append(liczba)
+#a)
+zad5 = 0
+for x in liczby:
+    zad5 +=x
+print('punkt a',zad5)
+
+#b)
+zad6 = 1
+for x in liczby:
+    zad6 *=x
+print('punkt b',zad6)
+
+#c)
+zad7 = 0
+for x in liczby:
+    zad7 += abs(x)
+print('punkt c2',zad7)
+
+#d)
+zad8 = 0
+for x in liczby:
+    zad8 += abs(x)**(1/2)
+print('punkt d',zad8)
+
+#e)
+zad9 = 1
+for x in liczby:
+    zad9*=abs(x)
+print('punkt e',zad9)
+
+#f)
+zad10=0
+for x in liczby:
+    zad10+=x**2
+print('punkt f',zad10)
+
+#g)
+zad11=0
+for x in liczby:
+    zad11+=x
+    zad11*=x
+print('punkt g',zad11)
+
+#)h
+zad12=0
+for x in liczby:
+    zad12-=x+(-1)**(n+1)*x
+    #zad12+=(-1)**(n+1)*x
+print('punkt h',zad12)
+#i)
+
+
+
+#zad.3 Wczytać liczbę naturalną n, a następnie wczytując kolejno ciąg n liczb rzeczywistych a_1, a_2, .., a_n wypisać w kolejnych
+liniach liczby tego ciągu w następującej kolejności: a_2, a_3, ... , a_n, a_1.
+
+# Wczytaj liczbę naturalną n
+n = int(input("Podaj liczbę naturalną n: "))
+# Wczytaj ciąg n liczb rzeczywistych a_1, a_2, ..., a_n
+ciag = []
+for i in range(n):
+    liczba = float(input(f"Podaj liczbę a_{i + 1}: "))
+    ciag.append(liczba)
+# Przeprowadź przesunięcie i wypisz wynik
+for i in range(1, n):
+    print(ciag[i], end="\n")  # Wypisz a_2, a_3, ..., a_n
+print(ciag[0])  # Wypisz a_1
+
+zad.4 Napisz program, który wypisuje na ekranie 64 razy następujące zdanie: Mężny bądż, chroń pułk twój i sześć flag.
+Zastanów się co można powiedzieć o literach występujących w tym zdaniu.
+
+zdanie = "Mężny bądź, chroń pułk twój i sześć flag."
+# Wypisz zdanie 64 razy
+for _ in range(64):
+    print(zdanie)
+# Analiza liter w zdaniu
+litery = [litera for litera in zdanie if litera.isalpha()]
+unikalne_litery = set(litery)
+print("\nAnaliza liter w zdaniu:")
+print(f"Liczba wszystkich liter: {len(litery)}")
+print(f"Liczba unikalnych liter: {len(unikalne_litery)}")
+print("Unikalne litery:", ', '.join(unikalne_litery))
