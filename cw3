@@ -8,3 +8,27 @@ print(f'Masz tyle lat: {wiek}')
 # duga wersja
 wiek=(input("Jaki jest twój wiek? "))
 print(f'Masz tyle lat: {int(wiek)}')
+
+
+print('wdp'+'jest'+'najlepszy')
+print(3*'Tak jest ')
+
+fraza='wdp'+"jest"+'najlepszy'
+print(fraza[0])
+print(fraza[:3])
+print(fraza[3:])
+print(fraza[3:2]) # nie wyda bo jest jakby 2-3 daje -1 czyli puste ale jak 6-3 powinno dac jes
+print(fraza[-1])
+print(fraza[5:-3])
+print(fraza[-3:])
+
+'inf' in 'informatyka'
+def suma(lista):
+    wynik=0
+    for element in lista:
+        wynik+=element
+    return wynik
+lista=[1,2,3]
+print(suma(lista))
+
+# wejsciowka z zad.1 z poprzedniego cwiczen i co dzisiaj def, fraza i wiedziec np.: [:3 ]
