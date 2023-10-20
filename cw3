@@ -1,0 +1,10 @@
+imie=input("Podaj swoje imie mój Panie: ")
+print(f'Twoje imie to: {imie}')
+
+# pierwsza wersja
+wiek=int(input("Jaki jest twój wiek? "))
+print(f'Masz tyle lat: {wiek}')
+
+# duga wersja
+wiek=(input("Jaki jest twój wiek? "))
+print(f'Masz tyle lat: {int(wiek)}')
