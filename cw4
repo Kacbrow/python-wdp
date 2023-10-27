@@ -1,0 +1,97 @@
+import random
+#program
+liczba=float(input('Podaj liczbę: '))
+if liczba<0:
+    liczba*=-1
+print(f'Wartosc bewzgledna liczby: {liczba}')
+#funkcja
+def absNew(liczba):
+    if liczba<0:
+        liczba*=-1
+    return liczba
+
+print(f'Wartosc bewzgledna liczby: {absNew(liczba)}')
+
+#funkcja
+def sgn(liczba):
+    if liczba<0:
+        return -1
+    if liczba>0:
+        return 1
+    return 0
+
+print(f'funkcja ma argument: {sgn(liczba)}')
+#ma byc program
+a = int(input("Podaj a: "))
+b = int(input("Podaj b: "))
+#def dzielenie(a,b):
+ #   if (a,b>0):
+        #return a/b
+    #if (b<0):
+# print('dzielenie nie jest mozliwe')
+# print(f'dzielenie: {dzielenie(a,b)}')
+# def dzielenie1(a,b):
+if(b<=0):
+    print('dzielenie nie jest mozliwe')
+else:
+    print(f'dzielenie {a} przez {b} daje nam wynik: {a/b}')
+# print(f'wynik dzielenia: {dzielenie1(a,b)}')
+
+
+#x=-(b/a)
+    # if(a==0):
+    #print(f'rownanie ma stała b: {b} ')
+#if (a!=0):
+ #   print()
+
+#zad_1.4
+#a = int(input("Podaj a: "))
+#b = int(input("Podaj b: "))
+if(a == 0):
+    print("Nie równanie liniowe, Funkcja Stała:")
+else:
+    x = -b/a
+    print(f"Pierwiastek równania liniowego ax+b = 0, x = {x}")
+
+#zad. 2.1
+n=int(input("Podaj liczbę naturalną n: "))
+liczby=[]
+for x in range(n):
+    liczba=float(input())
+    liczby.append(liczba)
+#pkt a
+zad1=0
+for x in liczby:
+    if(x%2!=0):
+        zad1*=x
+print(zad1)
+
+n = int(input("Liczba n: "))
+ilosc_liczb_nieparzystych = 0
+for x in range(n):
+    liczba2 = int(input(f"Podaj {x+1} liczbę: "))
+    if(liczba2 % 2 == 1):
+        ilosc_liczb_nieparzystych+=1
+        print(f"Ilosc liczb nieparzystych: {ilosc_liczb_nieparzystych}")
+#pkt b
+n = int(input("Liczba n: "))
+ilosc_liczb_podzielnych=0
+for x in range(n):
+    liczba3 = int(input(f"Podaj {x+1} liczbę: "))
+    if(liczba3%3==1 & liczba3%5!=1):
+        ilosc_liczb_podzielnych+=1
+        print(f'ilosc liczb podzielnych: {ilosc_liczb_podzielnych}')
+
+#liczba=random_vandint(5,10)
+def generuj(len,min=0,max=100):
+    wynik=[]
+    for i in range(len):
+        liczba=random_vandint(min,max)
+        wynik.append(liczba)
+    return wynik
+print(generuj(5))
+
+
+
+
+
