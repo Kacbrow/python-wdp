@@ -1,0 +1,78 @@
+#------Zadanie 1------
+#--a--
+lista = []
+a = 0
+for i in range (1,11):
+    lista.append(i)
+print(lista)
+#--b--
+lista2 = []
+b = 0
+for o in range (0,21,2):
+    lista2.append(o)
+print(lista2)
+#--c--
+lista3 = []
+c = 0
+for p in range (1,101,3):
+    lista3.append(p)
+print(lista3)
+#--d--
+lista4 = []
+d = 0
+for u in range (0,10):
+    d*=u
+    lista4.append(d)
+print(lista4)
+#--e--
+lista5 = []
+e = 0
+for l in range (0,5):
+    lista5.append(0)
+    lista5.append(1)
+print(lista5)
+#--f--
+lista6 = []
+f = 0
+for k in range (0,10):
+    lista6.append(k%5)
+print(lista6)
+#-------Zadanie 2---------
+#--a--
+listaa = []
+i = 0
+while i < 10:
+    i += 1
+    listaa.append(i)
+print(listaa)
+#--b--
+listaa2 = []
+z = -2
+while z < 20:
+    z += 2
+    listaa2.append(z)
+print(listaa2)
+#--c--
+listaa3 = []
+x = -2
+while x < 100:
+    x += 3
+    listaa3.append(x)
+print(listaa3)
+#----d----
+listaa4 = []
+v = 0
+while v < 10:
+    v += 0
+    listaa4.append(v)
+print(listaa4)
+#--e--
+listaa5 = []
+e = 0
+
+print(listaa5)
+#--f--
+listaa6 = []
+
+print(listaa6)
+
