@@ -1,0 +1,40 @@
+#Zad.5 napis odwrócony trzy sposoby
+def reverse(napis):
+    return napis[::-1]
+napis = "hello"
+print(reverse(napis))
+
+def reverse2(napis):
+    wynik = ""
+    for litera in napis:
+        wynik = litera +wynik
+    return wynik
+print(reverse2(napis))
+
+def reverse3(napis):
+    wynik = ""
+    l = len(napis)
+    for x in range(l):
+        wynik += napis[l-x-1]
+    return wynik
+print(reverse2(napis))
+
+#zad6. palindrom napisu
+def is_palindrome(string):
+    inverse = string[::-1]
+    if string == inverse:
+        return True
+    else:
+        return False
+print(is_palindrome('kajak'))
+
+def is_palindrome(string):
+    return string == string[::-1]
+print(is_palindrome('kajak'))
+
+#zad.7 funkcja mirror (napis) czyli tworzy napis od linka ma stworzyc
+# sklejanie z odbiciem lustrzanym czyli linkaaknil.
+def mirror(napis):
+    return inverse +=napis[::-1]
+print(mirror("linka"))
+
