@@ -1,0 +1,25 @@
+#1. f.dzielniki-znajdz sposob wyszukiwania dzielnikow ,f.sumy,f.doskonala-wszystko sumujemy
+liczba=int(input('podaj liczbe naturalna: '))
+def dzielniki(liczba):
+    wynik=[]
+    for cyfra in range(1,int(liczba/2+1)):
+        if (liczba%cyfra==0):
+            wynik.append(cyfra)
+   # wynik.append(liczba)
+    return wynik;
+print(dzielniki(liczba))
+
+def suma(lista):
+    wynik=0
+    for l in lista:
+        wynik+=l
+    return wynik;
+def czyDoskonala(liczba):
+    dziel=dzielniki(liczba);
+    suma_dziel=suma(dziel)
+    return suma_dziel==liczba;
+print(czyDoskonala(liczba))
+
+def zad1b(liczba):
+    wynik=[]
+  
