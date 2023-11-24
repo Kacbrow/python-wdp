@@ -1,0 +1,65 @@
+# b
+def dzielniki(liczba):
+    wynik=[]
+    for cyfra in range(1,int(liczba/2+1)):
+        if (liczba%cyfra==0):
+            wynik.append(cyfra)
+   # wynik.append(liczba)
+    return wynik;
+print(dzielniki(7))
+def suma(lista):
+    wynik=0
+    for l in lista:
+        wynik+=l
+    return wynik;
+def czyDoskonala(liczba):
+    dziel=dzielniki(liczba);
+    suma_dziel=suma(dziel)
+    return suma_dziel==liczba;
+print(czyDoskonala(7))
+
+def zad1b(liczba):
+    wynik=[]
+
+# c
+def pierwsza(liczba):
+    for dzielnik in range(2,liczba):
+        if liczba % dzielnik==0:
+            return False
+    return True
+print("Pierwsza: ",pierwsza(7))
+
+def wszystkie_dzielniki(liczba):
+    d=dzielniki(liczba)
+    d.append(liczba)
+    return d
+
+def czy_nalezy(lista1,element):
+    for x in lista1:
+        if(x==element):
+            return True
+        return False
+def czesc_wspolna(lista1,lista2):
+    wynik=[]
+    for element in lista1:
+        if czy_nalezy(lista2,element):
+            wynik.append(element)
+    return wynik
+lista1=[1,3,8]
+lista2=[1,5,8]
+print(czesc_wspolna(lista1,lista2))
+def czy_wzglednie_pierwsze(lista1,lista2):
+    d1.wszystkie_dzielniki(liczba1)
+    d2.wszystkie_dzielniki(liczba2)
+    iloczyn=czesc_wspolna(d1,d2)
+    return len(iloczyn)==1 and iloczyn[0]==1
+
+# unikalność np.: mamy liste [8 2 8 5 2 1 4 5] ma nam przekształcić na wynik  [8 2 5 1 4]
+def unikalnosc(lista):
+    wynik=[]
+    for element in lista:
+        if not czy_nalezy(lista,element):
+            wynik.append(element)
+    return wynik
+
+
