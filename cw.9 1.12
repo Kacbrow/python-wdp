@@ -1,0 +1,33 @@
+# np.: 5,2,5,3 ->5:2,2:1,3:1 ile razy wystepuje dana liczba ma przeliczyc
+def czestosc(lista):
+    d = { }
+    for e in lista:
+       if e in d:
+            d[e] +=1
+       else:
+            d[e] = 1
+    return d
+lista3 = [5,2,5,3]
+print(f"Liczba : Ilosc wystapien \n{czestosc(lista3)}\n")
+
+# zrobic tak samo jak czestosc ale dla slowo ile liter wystepuje w danym liscie
+def czestosc_slowa(zdanie):
+    d={ }
+    for e in zdanie:
+        if e in d:
+            d[e]+=1
+        else:
+            d[e]=1
+    return d
+zdanie='alaarrrr'
+print(f"slowo: ilosc wystapien \n{czestosc_slowa(zdanie)}")
+
+# zrobic ze np mamy "Ala ma kota" zeby nie był wrazliwy na wielkosc liter czyli maja byc takie same A=a
+def toLower(zdanie):
+    tab=[zdanie]
+    for x in tab:
+        return x.lower()
+zdanie1='Ala Ma Kota'
+print(f"Z zdania: Ala Ma Kota.- musi na male litery czyli: {toLower(zdanie1)}")
+
+# zad.3
