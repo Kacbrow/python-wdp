@@ -1,0 +1,160 @@
+# b
+def dzielniki(liczba):
+    wynik=[]
+    for cyfra in range(1,int(liczba/2+1)):
+        if (liczba%cyfra==0):
+            wynik.append(cyfra)
+    return wynik
+print(dzielniki(7))
+def suma(lista):
+    wynik=0
+    for l in lista:
+        wynik+=l
+    return wynik
+def czyDoskonala(liczba):
+    dziel=dzielniki(liczba)
+    suma_dziel=suma(dziel)
+    return suma_dziel==liczba
+print(czyDoskonala(7))
+# c
+def pierwsza(liczba):
+    for dzielnik in range(2,liczba):
+        if liczba % dzielnik==0:
+            return False
+    return True
+print("Pierwsza: ",pierwsza(7))
+def wszystkie_dzielniki(liczba):
+    d=dzielniki(liczba)
+    d.append(liczba)
+    return d
+def czy_nalezy(lista1,element):
+    for x in lista1:
+        if(x==element):
+            return True
+        return False
+def czesc_wspolna(lista1,lista2):
+    wynik=[]
+    for element in lista1:
+        if czy_nalezy(lista2,element):
+            wynik.append(element)
+    return wynik
+lista1=[1,3,8]
+lista2=[1,5,8]
+print(f"czesc wspolna: {czesc_wspolna(lista1,lista2)}")
+def czy_wzglednie_pierwsze(liczba1,liczba2):
+    d1=wszystkie_dzielniki(liczba1)
+    d2=wszystkie_dzielniki(liczba2)
+    iloczyn=czesc_wspolna(d1,d2)
+    return len(iloczyn)==1 and iloczyn[0]==1
+# unikalność np.: mamy liste [8 2 8 5 2 1 4 5] ma nam przekształcić na wynik  [8 2 5 1 4]
+array = [8,2,8,5,2,1,4,5]
+def unikalnosc(lista):
+    lista2 = []
+    for element in lista:
+        if not czy_nalezy(lista2,element):
+            lista2.append(element)
+    return lista2
+print(unikalnosc(array))
+# np.: 5,2,5,3 ->5:2,2:1,3:1 ile razy wystepuje dana liczba ma przeliczyc
+def czestosc(lista):
+    d = { }
+    for e in lista:
+       if e in d:
+            d[e] +=1
+       else:
+            d[e] = 1
+    return d
+lista3 = [5,2,5,3]
+print(f"Liczba : Ilosc wystapien \n{czestosc(lista3)}\n")
+# zrobic tak samo jak czestosc ale dla slowo ile liter wystepuje w danym liscie (jesli jest cos to dodaje kolejne a jak nie ma to daje jeden
+def czestosc_slowa(zdanie):
+    d={ }
+    for e in zdanie:
+        if e in d:
+            d[e]+=1
+        else:
+            d[e]=1
+    return d
+zdanie4='alaarrrr'
+print(f"slowo: ilosc wystapien \n{czestosc_slowa(zdanie4)}")
+# zrobic ze np mamy "Ala ma kota" zeby nie był wrazliwy na wielkosc liter czyli maja byc takie same A=a
+def toLower(zdanie):
+    tab=[zdanie]
+    for x in tab:
+        return x.lower()
+zdanie1='Ala Ma Kota'
+print(f"Z zdania: Ala Ma Kota.- musi na male litery czyli: {toLower(zdanie1)}")
+def String(plik):
+    string = open(plik)
+    zawartosc = string.read()
+    return zawartosc
+def czy_litera(napis):
+    litery = []
+    for x in napis:
+        if 'A' <= x <= 'Z' or 'a' <= x <= 'z':
+            litery.append(x)
+    return litery
+plik = "text.txt"
+tekst = String(plik)
+print(tekst)
+teskt_lower = toLower(tekst)
+litery = czy_litera(teskt_lower)
+print(czestosc(litery))
+# zad.1 funkcja ktora pobiera jako argument ciag znakow i zwraca jako wynik
+def łańcuch(napis):
+    wynik = {}
+    for x in napis:
+       if(isalpha2(x)== True):
+            if x in wynik:
+                wynik[x]+=1
+            else:
+                wynik[x]=1
+    return wynik
+def isalpha2(znak): # zajecia
+    return ("a"<= znak and znak <="z") or ("A" <= znak and znak <= "Z")
+napis = "litera_spacja 5"
+print(łańcuch(napis))
+def bez_rozrozniania(napis):
+    wynik=[]
+    for x in napis:
+        if 'A'<=x<='Z' or 'a'<=x<='z':
+            wynik.append(x)
+    return wynik
+napis4='AlalAlAMmmaz'
+def czestos_wdp(lista):
+    d={ }
+    for e in lista:
+        if not isalpha2(e):
+            continue
+        e=toLower_wdp(e)
+        if e in d:
+            d[e]+=1
+        else:
+            d[e]=1
+    return d
+def toLower_wdp(znak):
+    if 'A'<=znak and znak<='Z':
+        return d(or d(znak)+32)
+    return znak
+napis5='alalamansda'
+def dictionary_max(d):
+    max_k=next(iter(d)) # ze slowniki bierze piewrszy slowo i klucz dostaje (to oznacza ze dostał pierwszy klucz ze slownika)
+    max_w=d[max_k]
+    for klucz in d:
+        if d[klucz]>max_w:
+            max_k=klucz
+            max_w=d[klucz]
+    return max_k,max_w
+print(czestosc(dictionary_max(napis5)))
+
+# 12 567 10 15
+# 1=> 1+4+5+6+9+14=39
+# 2=> 1+3+4+5+8+3=34
+def wik(liczba):
+    winik=[]
+    for x in liczba:
+        if x in winik:
+            winik-=x
+    return winik
+liczba=[1,2,4,5,6,7,10,15]
+print(wik(liczba))
