@@ -93,3 +93,24 @@ def wczytaj_plik(nazwa_pliku):
 nazwa_pliku = input("Podaj nazwę pliku: ")
 slownik_wystapien = wczytaj_plik(nazwa_pliku)
 print(slownik_wystapien)
+
+
+#--------zad4-------#
+Napisz program, który czyta linijka po linijce z pliku tekstowego i rozkłada linie na części za pomocą metody split(). Nastepnie dla otrzymanej listy elementów sprawdza, czy kolejny element jest liczbą- jeżeli jest, to dodaje go do słownika. Program ma wypisać słownik, w którym kluczami są liczby , a wartościami- liczby ich wystąpień.
+def wczytaj_plik(nazwa_pliku):
+    slownik = {}
+    with open(nazwa_pliku, 'r') as plik:
+        for linia in plik:
+            elementy = linia.strip().split()
+            for element in elementy:
+                if element.isdigit():
+                    liczba = int(element)
+                    if liczba in slownik:
+                        slownik[liczba] += 1
+                    else:
+                        slownik[liczba] = 1
+    return slownik
+
+nazwa_pliku = "plik.txt"  # podaj nazwę pliku, który chcesz wczytać
+wynik = wczytaj_plik(nazwa_pliku)
+print(wynik)
