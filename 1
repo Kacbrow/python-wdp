@@ -1,0 +1,80 @@
+#------------Zadanie 1-Unikalność-------------
+lista1=[5,8,3,5,4,1,7,8]
+def uniq(lista1):
+    wynik = []
+    for e in lista1:
+        if e not in wynik:
+            wynik.append(e)
+    return wynik
+#print(uniq(lista1))
+
+#-----------Zadanie 2-Liczba pierwsza-------
+liczba = 28
+
+#def dzielniki(liczba):
+#    wynik = []
+#   for i in range(1,int(liczba/2+1)):
+#        if liczba % i == 0:
+#            wynik.append(i)
+#            wynik.append(liczba)
+#    return wynik
+
+def dzielniki1(liczba, zliczba=True):
+    wynik = []
+    for i in range(1,int(liczba/2+1)):
+        if liczba % i == 0:
+            wynik.append(i)
+    if zliczba:
+        wynik.append(liczba)
+    return wynik
+#print(dzielniki1(liczba))
+
+def czy_liczba_pierwsza(liczba):
+    if liczba < 1:
+        return False
+    d = dzielniki1(liczba)
+    return len(d)==2
+#print(czy_liczba_pierwsza(liczba))
+
+#-----------Zadanie 3-Liczba doskonała-----
+# Jest to liczba, której po dodaniu jej liczby dzielników równa się podanej liczbie
+
+def suma(lista):
+    k = 0
+    for i in lista:
+        k += i
+
+    return k
+#print(suma(lista))
+
+def czy_liczba_doskonala(liczba):
+    d = dzielniki1(liczba, False)
+    s = suma(d)
+    return s == liczba
+print(czy_liczba_doskonala(liczba))
+
+#----------Zadanie 1-------------------
+lista=[5,8,2,1,4,5]
+x = 8
+def minimum(lista):
+    naj=lista[0]
+    for e in lista:
+        if e < naj:
+            naj = e
+    return naj
+print(minimum(lista))
+#-----------Zadanie 2a------------------
+
+def czy_nalezy(lista,x):
+    wynik=False
+    for e in lista:
+        if e == x:
+            wynik = True
+    return wynik
+print(czy_nalezy(lista, x))
+#----------Zadanie 2b------------------
+def czy_nalezy1(lista,x):
+    for e in lista:
+        if e == x:
+            return True
+    return Fals
