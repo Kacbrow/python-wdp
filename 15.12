@@ -75,3 +75,21 @@ while True:
         d=czestosc([liczba],d)
     except err:
         print("Blad")
+
+#------------zad3-----------#
+def wczytaj_plik(nazwa_pliku):
+    slownik = {}
+    with open(nazwa_pliku, 'r') as plik:
+        linie = plik.readlines()
+        for linia in linie:
+            for znak in linia:
+                if znak.isalpha():
+                    if znak in slownik:
+                        slownik[znak] += 1
+                    else:
+                        slownik[znak] = 1
+    return slownik
+
+nazwa_pliku = input("Podaj nazwę pliku: ")
+slownik_wystapien = wczytaj_plik(nazwa_pliku)
+print(slownik_wystapien)
