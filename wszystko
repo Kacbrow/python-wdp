@@ -1,0 +1,240 @@
+#   for key in d:
+#       print(d[key])
+d = {0:5,1:7,2:2,3:8}
+#dodawanie do słownika d[8] = 2
+d[10] = 23
+d['balls'] = 'radius'
+d[False] = 'inches'
+d[True] = 'centimeters'
+#for key in d:
+#    print(d[key])
+
+#print(d)
+
+a = "Ala ma kota"
+
+def czestotliwosc(string):
+    d = dict()
+    for i in string:
+        if i in d:
+            d[i] += 1
+        else:
+            d[i] = 1
+    return d
+print(czestotliwosc(a))
+
+def isalpha(znak):
+    if znak >= 'A' and znak <= 'Z':
+        return True
+    if znak >= 'a' and znak <= 'z':
+        return True
+    return False
+
+def zadanie1b(string):
+    litery = []
+    for i in string:
+        if isalpha(i):
+            litery.append(i)
+
+    return czestotliwosc(litery)
+print(zadanie1b(a))
+
+def zadanie1c(string):
+    male = []
+    c = string.lower()
+    for i in c:
+        if isalpha(i):
+            male.append(i)
+    return czestotliwosc(male)
+print(zadanie1c(a))
+
+def max_d(d):
+    klucz = next(iter(d))
+    for k in d:
+        if d[k] > d[klucz]:
+            klucz = k
+        return klucz
+print(max_d(zadanie1c(a)))
+
+def zadanie1d(string):
+    return max_d(zadanie1c(string))
+#----------------------------------------------------
+
+# "." - odwołanie do siebie
+# ".." - odwołanie do siebie
+f = open("./słownik 2.py")
+print(f.read())
+
+# file = open('./słownik 2.py', 'r').read()
+# lines = file.split('\n')
+# for line in lines:
+#     print line
+
+
+def zadanie2():
+    ph = {}
+    while True:
+        i = input("Podaj liczbę: ")
+        if i =="":
+            break
+        try:
+            l = int(i)
+            if l in ph:
+                ph[l] += 1
+            else:
+                ph[l] = 1
+        except NameError:
+         print('aaaa')
+    print("Wynik: ")
+    for l, i in ph.items():
+        print(f"Liczba: {l}, Wystąpiła: {i} razy")
+zadanie2()
+
+
+#def dzielniki(liczba):
+#    wynik = []
+#   for i in range(1,int(liczba/2+1)):
+#        if liczba % i == 0:
+#            wynik.append(i)
+#            wynik.append(liczba)
+#    return wynik
+
+def dzielniki1(liczba, zliczba=True):
+    wynik = []
+    for i in range(1,int(liczba/2+1)):
+        if liczba % i == 0:
+            wynik.append(i)
+    if zliczba:
+        wynik.append(liczba)
+    return wynik
+#print(dzielniki1(liczba))
+
+def czy_liczba_pierwsza(liczba):
+    if liczba < 1:
+        return False
+    d = dzielniki1(liczba)
+    return len(d)==2
+#print(czy_liczba_pierwsza(liczba))
+
+#-----------Zadanie 3-Liczba doskonała-----
+# Jest to liczba, której po dodaniu jej liczby dzielników równa się podanej liczbie
+
+def suma(lista):
+    k = 0
+    for i in lista:
+        k += i
+
+    return k
+#print(suma(lista))
+
+def czy_liczba_doskonala(liczba):
+    d = dzielniki1(liczba, False)
+    s = suma(d)
+    return s == liczba
+print(czy_liczba_doskonala(liczba))
+
+#----------Zadanie 1-------------------
+lista=[5,8,2,1,4,5]
+x = 8
+def minimum(lista):
+    naj=lista[0]
+    for e in lista:
+        if e < naj:
+            naj = e
+    return naj
+print(minimum(lista))
+#-----------Zadanie 2a------------------
+
+def czy_nalezy(lista,x):
+    wynik=False
+    for e in lista:
+        if e == x:
+            wynik = True
+    return wynik
+print(czy_nalezy(lista, x))
+#----------Zadanie 2b------------------
+def czy_nalezy1(lista,x):
+    for e in lista:
+        if e == x:
+            return True
+    return False
+
+
+#------Zadanie 1------
+#--a--
+lista = []
+a = 0
+for i in range (1,11):
+    lista.append(i)
+print(lista)
+#--b--
+lista2 = []
+b = 0
+for o in range (0,21,2):
+    lista2.append(o)
+print(lista2)
+#--c--
+lista3 = []
+c = 0
+for p in range (1,101,3):
+    lista3.append(p)
+print(lista3)
+#--d--
+lista4 = []
+d = 0
+for u in range (0,10):
+    d*=u
+    lista4.append(d)
+print(lista4)
+#--e--
+lista5 = []
+e = 0
+for l in range (0,5):
+    lista5.append(0)
+    lista5.append(1)
+print(lista5)
+#--f--
+lista6 = []
+f = 0
+for k in range (0,10):
+    lista6.append(k%5)
+print(lista6)
+#-------Zadanie 2---------
+#--a--
+listaa = []
+i = 0
+while i < 10:
+    i += 1
+    listaa.append(i)
+print(listaa)
+#--b--
+listaa2 = []
+z = -2
+while z < 20:
+    z += 2
+    listaa2.append(z)
+print(listaa2)
+#--c--
+listaa3 = []
+x = -2
+while x < 100:
+    x += 3
+    listaa3.append(x)
+print(listaa3)
+#----d----
+listaa4 = []
+v = 0
+while v < 10:
+    v += 0
+    listaa4.append(v)
+print(listaa4)
+#--e--
+listaa5 = []
+e = 0
+
+print(listaa5)
+#--f--
+listaa6 = []
+
+print(listaa6)
+
