@@ -1,0 +1,25 @@
+# zad.4 Napisz program, który czyta linijka po linijce z pliku tekstowego i rozkłada linie na części za pomocą metody split().
+#Nastepnie dla otrzymanej listy elementów sprawdza, czy kolejny element jest liczbą- jeżeli jest, to dodaje go do słownika.
+# #Program ma wypisać słownik, w którym kluczami są liczby , a wartościami- liczby ich wystąpień.
+file=open("text.txt")
+while True:
+    linia=file.readline()
+    if not linia:
+        break
+    print(linia)
+def count_numbers(filename):
+    dictionary = {}
+    with open(filename, 'r') as file:
+        for line in file:
+            elements = line.strip().split()
+            for i in range(len(elements)):
+                if elements[i].isdigit():
+                    num = int(elements[i])
+                    if num in dictionary:
+                        dictionary[num] += 1
+                    else:
+                        dictionary[num] = 1
+    return dictionary
+filename = "text.txt"  # nazwa pliku tekstowego
+result = count_numbers(filename)
+print(result)
